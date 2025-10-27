@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg id="wavy-bg" aria-hidden="true" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="wg" x1="0" x2="1">
+        <stop offset="0" stop-color="#05233a" />
+        <stop offset="1" stop-color="#072b4a" />
+      </linearGradient>
+    </defs>
+
+    <rect width="100%" height="100%" fill="url(#wg)"></rect>
+
+    <g class="waves" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2">
+      <path class="wave wave-1" d="M0,420 C200,360 400,480 600,420 C800,360 1000,480 1200,420" />
+      <path class="wave wave-2" d="M0,460 C200,400 400,520 600,460 C800,400 1000,520 1200,460" />
+      <path class="wave wave-3" d="M0,380 C200,320 400,440 600,380 C800,320 1000,440 1200,380" />
+    </g>
+  </svg>
+
+<svg id="circle-bg" aria-hidden="true" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <symbol id="s-dot" viewBox="0 0 10 10" overflow="visible">
+      <circle cx="5" cy="5" r="1" />
+    </symbol>
+  </defs>
+
+  <g class="circles" transform="translate(500,300)">
+    <use href="#s-dot" class="dot" x="-180" y="-60" style="--s:4; --o:0.10" />
+    <use href="#s-dot" class="dot" x="-80"  y="-20" style="--s:6; --o:0.12" />
+    <use href="#s-dot" class="dot" x="10"   y="-10" style="--s:3.5; --o:0.08" />
+    <use href="#s-dot" class="dot" x="120"  y="-40" style="--s:5; --o:0.10" />
+    <use href="#s-dot" class="dot" x="-40"  y="40"  style="--s:7; --o:0.14" />
+    <use href="#s-dot" class="dot" x="60"   y="60"  style="--s:4.5; --o:0.09" />
+    <use href="#s-dot" class="dot" x="180"  y="20"  style="--s:5.5; --o:0.11" />
+  </g>
+</svg>
+
+
+  <main class="page">
+    <div class="calculator" role="application" aria-label="Simple calculator">
+      <div class="metal-streaks" aria-hidden="true">
+        <span class="streak"></span>
+        <span class="streak-2"></span>
+      </div>
+
+      <div class="display-wrap">
+        <input id="display" class="display" type="text" value="345" aria-label="Calculator display" readonly />
+      </div>
+
+      <div class="keys" role="group" aria-label="Calculator keys">
+        <button class="btn digit" data-value="7">7</button>
+        <button class="btn digit" data-value="8">8</button>
+        <button class="btn digit" data-value="9">9</button>
+        <button class="btn op" data-value="/">÷</button>
+
+        <button class="btn digit" data-value="4">4</button>
+        <button class="btn digit" data-value="5">5</button>
+        <button class="btn digit" data-value="6">6</button>
+        <button class="btn op" data-value="*">×</button>
+
+        <button class="btn digit" data-value="1">1</button>
+        <button class="btn digit" data-value="2">2</button>
+        <button class="btn digit" data-value="3">3</button>
+        <button class="btn op" data-value="-">−</button>
+
+        <button class="btn digit" data-value="0">0</button>
+        <button class="btn dot" data-value=".">.</button>
+        <button class="btn equal" id="equals" data-value="=" aria-label="equals">=</button>
+        <button class="btn op" data-value="+">+</button>
+      </div>
+
+      <div class="clear-wrap">
+        <button id="clear" class="btn clear" data-value="clear">Clear</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
